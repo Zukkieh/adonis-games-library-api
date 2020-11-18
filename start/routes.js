@@ -22,3 +22,7 @@ Route.get('/', () => {
 
 Route.post('user', 'UserController.store').as('user.store')
 Route.post('auth', 'AuthController.authenticate').as('auth.authenticate')
+
+Route.group(() => {
+  Route.patch('auth/:user_id', 'AuthController.update').as('auth.update')
+}).middleware('auth')
