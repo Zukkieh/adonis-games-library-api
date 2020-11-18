@@ -25,4 +25,5 @@ Route.post('auth', 'AuthController.authenticate').as('auth.authenticate')
 
 Route.group(() => {
   Route.patch('auth/:user_id', 'AuthController.update').as('auth.update')
+  Route.get('user/:username', 'UserController.show').as('user.show')
 }).middleware('auth')

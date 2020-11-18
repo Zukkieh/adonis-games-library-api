@@ -55,7 +55,7 @@ class AuthController {
             user_type: user.type,
             data: {
                 email: user.email,
-                name: user.name,
+                username: user.username,
                 ...(data && data.$attributes),
                 ...(data && data.$relations)
             }

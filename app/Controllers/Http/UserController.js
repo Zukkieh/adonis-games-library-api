@@ -8,16 +8,16 @@ class UserController {
 
     async show({ params, response, auth }) {
 
-        if (!auth.user.type) {
+        if (auth.user.type) {
 
             const user = await User.query()
                 .select([
                     'id',
-                    'name',
+                    'username',
                     'email',
                     'type',
                 ])
-                .where('email', params.email)
+                .where('username', params.username)
                 .first()
 
             if (!user)
