@@ -17,7 +17,7 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return { greeting: 'Hello world, Lucas' }
+  return { greeting: 'Hello world!' }
 })
 
 Route.post('user', 'UserController.store').as('user.store')
