@@ -40,16 +40,6 @@ class AuthController {
 
         let data
 
-        // if (user.type == 'Adm')
-        //     data = await user.coordinator().with('course').fetch()
-
-        // else if (user.type == 'Default')
-        //     data = await user.student().with('course')
-        //         .with('monitoring', monitor => {
-        //             monitor.select(['id', 'workload', 'semester', 'subject_id', 'student_id'])
-        //                 .where('deleted', false)
-        //         }).fetch()
-
         return response.status(200).send({
             token,
             type: user.type,

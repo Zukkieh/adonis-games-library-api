@@ -89,6 +89,27 @@ class GameController {
             })
     }
 
+    async destroy({ params, response, auth }) {
+
+        if (auth.user.type) {
+
+              const game = await Game.query()
+                .where('id', params.game_id)
+                .first()
+    
+              if (game) {
+                await game.delete()
+                return response.status(204).send()
+
+              }
+
+        } else
+            return response.status(403).send({
+                error: 'Permissão negada',
+                message: 'Você não tem permissão para excluir este registro'
+            })
+      }
+
 }
 
 module.exports = GameController
