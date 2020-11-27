@@ -52,8 +52,9 @@ class AuthController {
 
         return response.status(200).send({
             token,
-            user_type: user.type,
+            type: user.type,
             data: {
+                id: user.id,
                 email: user.email,
                 username: user.username,
                 ...(data && data.$attributes),

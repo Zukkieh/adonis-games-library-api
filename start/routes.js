@@ -26,4 +26,7 @@ Route.post('auth', 'AuthController.authenticate').as('auth.authenticate')
 Route.group(() => {
   Route.patch('auth/:user_id', 'AuthController.update').as('auth.update')
   Route.get('user/:username', 'UserController.show').as('user.show')
+  Route.post('game', 'GameController.store').as('user.store')
+  Route.patch('game/:game_id', 'GameController.update').as('user.update')
+  Route.get('game/', 'GameController.index').as('user.index')
 }).middleware('auth')
