@@ -9,7 +9,7 @@ class GameSchema extends Schema {
       table.increments()
       table.string('name', 255).notNullable()
       table.string('category', 80)
-      table.string('image', 500).notNullable()
+      table.text('image').notNullable()
       table.timestamps()
     })
   }
